@@ -1,0 +1,52 @@
+<app-menu></app-menu>
+
+
+
+<body>
+<div class="main">
+  <div class="my-appointments">
+    <h2>Programarile mele</h2>
+
+    <div *ngIf="loading" class="loading">
+      Loading appointments...
+    </div>
+
+    <div *ngIf="error" class="error">
+      {{ error }}
+    </div>
+
+    <table *ngIf="!loading && appointments.length > 0" class="appointments-table">
+      <thead>
+      <tr>
+        <th class="first1">ID</th>
+        <th>Doctor</th>
+        <th>Data si ora</th>
+        <th>Motiv</th>
+        <th>Spital</th>
+        <th class="last1" >Status</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let appointment of appointments">
+        <td>{{ appointment.id }}</td>
+        <td>{{ appointment.doctorName }}</td>
+        <td>{{ appointment.dateAppointment | date:'MMM d, y HH:mm' }}</td>
+        <td>{{ appointment.reason }}</td>
+        <td>{{ appointment.hospital }}</td>
+        <td [ngClass]="{
+    'btn-primary': appointment.status !== 'COMPLETED',
+    'button-completed': appointment.status === 'COMPLETED'
+  }">{{appointment.status}}</td>
+      </tr>
+      </tbody>
+    </table>
+
+    <div *ngIf="!loading && appointments.length === 0" class="no-appointments">
+      You have no appointments.
+    </div>
+  </div>
+</div>
+</body>
+
+
+<app-footer></app-footer>

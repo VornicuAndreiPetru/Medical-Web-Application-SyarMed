@@ -1,0 +1,56 @@
+<app-menu></app-menu>
+
+<body>
+<div class="main">
+  <div class="container">
+    <div class="tabs">
+      <button class="tab" (click)="toPatientReg()">Register as Patient</button>
+      <button class="tab active" >Register as Doctor</button>
+    </div>
+
+
+    <div class="alert alert-danger" role="alert" *ngIf="errorMsg.length">
+      <p *ngFor="let msg of errorMsg">{{ msg }}</p>
+    </div>
+
+    <!-- Doctor Registration Form -->
+    <form id="doctorForm" class="form active">
+      <h2>Doctor Registration</h2>
+      <div class="form-group">
+        <label for="doctor-firstname">First Name</label>
+        <input [(ngModel)]="registerRequest.firstname" type="text" id="doctor-firstname" name="firstname" required>
+      </div>
+      <div class="form-group">
+        <label for="doctor-lastname">Last Name</label>
+        <input [(ngModel)]="registerRequest.lastname" type="text" id="doctor-lastname" name="lastname" required>
+      </div>
+      <div class="form-group">
+        <label for="doctor-email">Email</label>
+        <input [(ngModel)]="registerRequest.email" type="email" id="doctor-email" name="email" required>
+      </div>
+      <div class="form-group">
+        <label for="doctor-password">Password</label>
+        <input [(ngModel)]="registerRequest.password" type="password" id="doctor-password" name="password" required>
+      </div>
+      <div class="form-group">
+        <label for="doctor-specialization">Specialization</label>
+        <select [(ngModel)]="registerRequest.specialization" id="doctor-specialization" name="specialization" required>
+          <option value="">Select Specialization</option>
+          <option value="cardiology">Cardiology</option>
+          <option value="neurology">Neurology</option>
+          <option value="pediatrics">Pediatrics</option>
+          <option value="orthopedics">Orthopedics</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="doctor-hospital">Hospital</label>
+        <input [(ngModel)]="registerRequest.hospital" type="text" id="doctor-hospital" name="hospital" required>
+      </div>
+      <div class="submitButton">
+        <button (click)="register()" type="submit">Register as Doctor</button>
+      </div>
+    </form>
+  </div>
+</div>
+</body>
+<app-footer></app-footer>

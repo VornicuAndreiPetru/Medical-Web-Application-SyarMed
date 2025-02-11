@@ -1,0 +1,151 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background-color: #012d33;
+  color: #333;
+}
+
+.main{
+  background-color: #ccf3f3;
+  padding: 50px 20px 20px 20px;
+  border-radius: 25px;
+}
+
+/* Secțiunea Hero */
+.hero {
+  background: linear-gradient(135deg, #21a8a8, #67cdcd);
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  position: relative;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.hero .container {
+  position: relative;
+  z-index: 1;
+}
+
+
+
+.hero h1 {
+  font-size: 2.5rem;
+}
+.about p{
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+/* Secțiunea About */
+.about {
+  display: flex;
+  justify-content: center;
+  padding: 50px 20px;
+  text-align: center;
+  background-color: white;
+}
+
+.about h2 {
+  margin-bottom: 20px;
+}
+
+/* Secțiunea Echipei */
+.team {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  padding: 50px 20px;
+}
+
+.team h2 {
+  margin-bottom: 20px;
+}
+
+.team-member {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+  max-width: 500px;
+  margin: auto;
+}
+
+.team-member:hover {
+  transform: translateY(-5px);
+}
+
+/* Secțiunea Valori */
+.values {
+  display: flex;
+  justify-content: center;
+  background: linear-gradient(135deg, #21a8a8, #67cdcd);;
+  color: white;
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.values h2 {
+  margin-bottom: 20px;
+}
+
+.values-list {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.value {
+  text-align: center;
+  max-width: 300px;
+}
+
+.value i {
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+
+/* Secțiunea Contact */
+.contact {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  padding: 40px 20px;
+  background: white;
+}
+
+.contact h2 {
+  margin-bottom: 20px;
+}
+
+.contact p {
+  font-size: 1.1rem;
+  margin: 10px 0;
+}
+
+i.fa-solid {
+  display: inline-block !important;
+  font-family: "Font Awesome 6 Free" !important;
+  font-weight: 900 !important;
+  margin-right: 5px;
+}

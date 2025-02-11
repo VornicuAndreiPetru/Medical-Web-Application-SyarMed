@@ -1,0 +1,41 @@
+<app-menu></app-menu>
+
+<div class="main">
+  <div class="container">
+    <h2 class="page-title">Lista Pacienților</h2>
+    <table class="table table-bordered custom-table">
+      <thead>
+      <tr>
+        <th>ID</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Address</th>
+        <th>CNP</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Activat/Neactivat</th>
+        <th>Cont blocat</th>
+        <th>Actions</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let patient of patients">
+        <td>{{ patient.id }}</td>
+        <td>{{ patient.firstname }}</td>
+        <td>{{ patient.lastname }}</td>
+        <td>{{ patient.address }}</td>
+        <td>{{ patient.cnp }}</td>
+        <td>{{ patient.email }}</td>
+        <td>{{ patient.phoneNumber }}</td>
+        <td>{{ patient.enabled ? 'Activat' : 'Neactivat' }}</td>
+        <td>{{ patient.accountLocked ? 'Blocat' : 'Deschis' }}</td>
+        <td>
+          <button (click)="editPatient(patient.id)" class="btn btn-primary">Editează</button>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<app-footer></app-footer>

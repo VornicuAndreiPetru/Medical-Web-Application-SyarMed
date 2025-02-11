@@ -1,0 +1,35 @@
+<app-menu></app-menu>
+
+<body>
+<div class="main">
+  <div class="feedback-container">
+    <h2>Recenziile tale</h2>
+
+    <div *ngIf="isLoading" class="loading-spinner">
+      <p>Loading feedback...</p>
+    </div>
+    <div *ngIf="error" class="error-message">
+      <p>{{ error }}</p>
+    </div>
+    <div *ngIf="feedbackResponse && feedbackResponse.feedbacks && feedbackResponse.feedbacks.length > 0; else noFeedback" class="feedback-details">
+      <h3>Average Rating: {{ feedbackResponse.averageRating | number:'1.1-1' }}</h3>
+      <app-rating [rating]="feedbackResponse.averageRating || 0" [readOnly]="true"></app-rating>
+      <div class="feedback-list">
+        <div *ngFor="let feedback of feedbackResponse.feedbacks" class="feedback-item">
+          <p class="p1"><strong>{{ feedback.patientName }}</strong> (Rating: {{ feedback.rating }})</p>
+          <p>{{ feedback.comment }}</p>
+          <p><small>Posted on: {{ feedback.createdDate | date }}</small></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+
+<app-footer></app-footer>
+
+<ng-template #noFeedback>
+  <div class="no-feedback">
+    <p>Momentan nu există feedback disponibil.</p>
+  </div>
+</ng-template>

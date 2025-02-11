@@ -1,0 +1,32 @@
+<div class="navbar">
+  <a class="brand" (click)="toHome()">SyarMed</a>
+  <div class="elements">
+    <a class="home" (click)="toHome()">Home</a>
+    <a class="login" *ngIf="!isLoggedIn" (click)="toLogin()">Login</a>
+    <a class="registerPatient" *ngIf="!isLoggedIn" (click)="toRegister()">Inregistrare</a>
+    <a class="idk" *ngIf="!isLoggedIn" (click)="toAboutUs()">Despre noi</a>
+
+    <a class="adminDash" (click)="toDashboard()" *ngIf="isAdmin">Dashboard Doctori</a>
+    <a class="adminDash" (click)="toDashboardPatients()" *ngIf="isAdmin">Dashboard Pacienti</a>
+
+    <!-- Linkuri pentru utilizatori, care apar doar dacă utilizatorul este logat și are rolul 'PATIENT' -->
+    <a class="patientDash" (click)="toAppointment()" *ngIf="isPatient">Programeaza-ma</a>
+    <a class="patientDash" (click)="toMyAppointments()" *ngIf="isPatient">Programarile Mele</a>
+    <a class="patientDash" (click)="toMyHistory()" *ngIf="isPatient">Istoricul Meu</a>
+    <a class="patientDash" (click)="toAddFeedback()" *ngIf="isPatient">Adauga Feedback</a>
+    <a class="doctorDash" (click)="toProfilePatient()" *ngIf="isPatient">Profilul meu</a>
+
+    <!-- Linkuri pentru admini, care apar doar dacă utilizatorul are rolul 'DOCTOR' -->
+    <a class="doctorDash" (click)="toDoctorAppointments()" *ngIf="isDoctor">Programari Pacienti</a>
+    <a class="doctorDash" (click)="toPatientsHistory()" *ngIf="isDoctor">Istoric Pacienti</a>
+    <a class="doctorDash" (click)="toReviews()" *ngIf="isDoctor">Reviews</a>
+    <a class="doctorDash" (click)="toProfileDoctor()" *ngIf="isDoctor">Profilul meu</a>
+  </div>
+
+    <!-- username va fi un buton unde poti modifica datele personale -->
+  <a class="user" *ngIf="isLoggedIn && isDoctor" (click)="toProfileDoctor()">{{ username }}</a>
+  <a class="user" *ngIf="isLoggedIn && isPatient" (click)="toProfilePatient()">{{ username }}</a>
+  <button class="btn btn-link" type="button" *ngIf="isLoggedIn" (click)="logout()">
+    <i class="fas fa-door-open"></i>
+  </button>
+</div>

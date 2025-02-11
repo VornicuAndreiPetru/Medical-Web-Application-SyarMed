@@ -1,0 +1,75 @@
+body{
+  background-color: #012d33;
+}
+
+.main{
+  background-color: #ccf3f3;
+  padding: 50px 20px 20px 20px;
+  border-radius: 25px;
+  min-height: 60vh;
+}
+
+.feedback-container {
+  margin: 20px;
+  font-family: Arial, sans-serif;
+}
+
+h2 {
+  color: #012d33;
+  text-align: center;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.loading-spinner,
+.error-message {
+  text-align: center;
+  font-size: 18px;
+}
+
+.feedback-details {
+  margin-top: 20px;
+}
+
+.feedback-list {
+  margin-top: 10px;
+}
+
+.feedback-item {
+  background-color: #67cdcd;
+  color: #012d33;
+  border: 1px solid #ddd;
+  padding: 15px;
+  margin-bottom: 10px;
+  border-radius: 25px;
+}
+
+.feedback-item p {
+  margin: 5px 0;
+}
+
+.error-message {
+  color: red;
+  font-weight: bold;
+}
+
+h3 {
+  color: #4caf50;
+  font-size: 20px;
+}
+
+small {
+  font-size: 12px;
+  color: gray;
+}
+.p1{
+  font-size: 20px;
+}
+
+.no-feedback {
+  text-align: center;
+  font-size: 22px;
+  font-weight: bold;
+  color: #888;
+  margin-top: 20px;
+}

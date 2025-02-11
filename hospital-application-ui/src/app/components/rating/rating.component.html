@@ -1,0 +1,11 @@
+<div class="rating">
+  <ng-container *ngFor="let _ of [].constructor(fullStars); let i = index">
+    <i class="fas fa-star text-warning" [class.non-clickable]="readOnly" (click)="!readOnly && rate(i + 1)"></i>
+  </ng-container>
+  <ng-container *ngIf="hasHalfStar">
+    <i class="fas fa-star-half-alt text-warning" [class.non-clickable]="readOnly"></i>
+  </ng-container>
+  <ng-container *ngFor="let _ of [].constructor(emptyStars); let i = index">
+    <i class="fas fa-star" [class.non-clickable]="readOnly" (click)="!readOnly && rate(fullStars + i + 1)"></i>
+  </ng-container>
+</div>

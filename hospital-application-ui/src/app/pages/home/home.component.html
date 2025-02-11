@@ -1,0 +1,70 @@
+<app-menu></app-menu>
+<body>
+<div class="main">
+  <div class="container">
+    <div class="text">
+      <h1>Bine ai venit in echipa SyarMed!</h1>
+      <br>
+      <h4>Acces Rapid la Sănătatea Ta! <i class="fa-regular fa-hospital"></i> </h4>
+      <p>Creează-ți un cont și ai acces rapid la programări, consultații și istoricul tău medical. Totul într-un singur loc, ușor de folosit și sigur.</p>
+      <button class="buton" (click)="toRegister()">Înregistrează-te acum </button>
+    </div>
+    <div class="image">
+      <img src="assets/images/picture1V2.png" alt="O imagine descriptivă">
+    </div>
+  </div>
+
+
+  <div class="categories">
+    <div class="stanga">
+      <h2>Beneficii</h2>
+      <p>Prin platforma noastră, pacienții pot găsi rapid medici de încredere, își pot gestiona programările și accesa istoricul medical, iar doctorii își pot organiza mai eficient consultațiile și pacienții.</p>
+    </div>
+    <div class="cards">
+      <div class="card">
+        <h4>Programări rapide</h4>
+        <p>Găsește și rezervă consultații simplu și rapid</p>
+      </div>
+      <div class="card">
+        <h4>Dosar medical digital</h4>
+        <p>Acces ușor la istoricul tău medical, mereu la îndemână</p>
+      </div>
+      <div class="card">
+        <h4>Finance</h4>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor, distinctio?</p>
+      </div>
+      <div class="card">
+        <h4>Gestionare simplă a pacienților <i class="fa-solid fa-user-doctor"></i></h4>
+        <p>Acces rapid la istoricul pacienților și programări organizate</p>
+      </div>
+      <div class="card">
+        <h4>Vizibilitate și noi pacienți <i class="fa-solid fa-user-doctor"></i></h4>
+        <p>Crește-ți baza de pacienți printr-o platformă modernă</p>
+      </div>
+      <div class="card">
+        <h4>Consultații online și offline <i class="fa-solid fa-user-doctor"></i></h4>
+        <p>Oferă servicii atât la cabinet, cât și prin telemedicină</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="faq-container">
+    <div class="faq-grid">
+      <div *ngFor="let faq of faqs; let i = index" class="faq-item">
+        <div class="faq-question" (click)="toggleFaq(i)">
+          <span>{{ faq.isOpen ? '-' : '+' }}</span> {{ faq.question }}
+        </div>
+        <div class="faq-answer" [ngClass]="{'open': faq.isOpen}">
+          {{ faq.answer }}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-footer></app-footer>
+
+</body>
+
+
+

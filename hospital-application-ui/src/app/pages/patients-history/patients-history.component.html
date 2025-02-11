@@ -1,0 +1,47 @@
+<app-menu></app-menu>
+
+
+<body>
+<div class="main">
+  <div class="search-container">
+    <h2>Caută Istoricul Medical al Pacientului</h2>
+
+    <form (ngSubmit)="searchHistory()" class="search-form">
+      <label for="cnp">CNP Pacient:</label>
+      <input
+        id="cnp"
+        type="text"
+        [(ngModel)]="cnp"
+        name="cnp"
+        class="form-control"
+        placeholder="Introduceți CNP-ul"
+        required
+      />
+      <button type="submit" class="btn btn-primary">Caută</button>
+    </form>
+
+    <div *ngIf="errorMessage" class="error-message">
+      {{ errorMessage }}
+    </div>
+
+    <div *ngIf="medicalHistory && medicalHistory.length > 0" class="history-container">
+      <h3>Istoricul Medical al Pacientului</h3>
+      <div *ngFor="let entry of medicalHistory" class="history-entry">
+        <p><strong>Nume pacient:</strong> {{ entry.patientName }}</p>
+        <p><strong>Doctor:</strong> {{ entry.doctorName }}</p>
+        <p><strong>Data Programării:</strong> {{ entry.appointmentDate | date: 'MMM d, y HH:mm' }}</p>
+        <p><strong>Diagnostic:</strong> {{ entry.diagnosis }}</p>
+        <p><strong>Tratament:</strong> {{ entry.treatment }}</p>
+        <p><strong>Informații Adiționale:</strong> {{ entry.additionalInfo }}</p>
+      </div>
+    </div>
+
+    <div *ngIf="medicalHistory && medicalHistory.length === 0" class="no-results">
+      <p>Nu există istoric medical pentru acest pacient.</p>
+    </div>
+  </div>
+</div>
+</body>
+
+<app-footer></app-footer>
+

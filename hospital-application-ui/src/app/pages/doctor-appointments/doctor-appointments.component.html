@@ -1,0 +1,92 @@
+<app-menu></app-menu>
+
+<body>
+<div class="main">
+  <div class="appointments-container">
+    <h2>Programările mele</h2>
+    <div *ngIf="appointments.length === 0" class="no-appointments">
+      <p>Nu ai nicio programare activă momentan!</p>
+    </div>
+    <div *ngFor="let appointment of appointments" class="appointment-card">
+      <p><strong>Pacient:</strong> {{ appointment.patientName }}</p>
+      <p><strong>CNP:</strong></p>
+      <p><strong>Data:</strong> {{ appointment.dateAppointment | date: 'MMM d, y HH:mm' }}</p>
+      <p><strong>Motiv:</strong> {{ appointment.reason}}</p>
+      <p>
+        <strong>Status:</strong>
+        <span [ngClass]="{
+      'status-completed': appointment.status === 'COMPLETED',
+      'status-pending': appointment.status === 'PENDING'
+    }">
+      {{ appointment.status }}
+    </span>
+      </p>
+      <button
+        class="btn"
+        [ngClass]="{
+    'btn-primary': appointment.status !== 'COMPLETED',
+    'button-completed': appointment.status === 'COMPLETED'
+  }"
+        [disabled]="appointment.status === 'COMPLETED'"
+        (click)="openForm(appointment.id)"
+      >
+        Deschide formular
+      </button>
+    </div>
+  </div>
+
+  <!-- Formular modal -->
+  <div *ngIf="showForm" class="form-modal">
+    <div class="form-container">
+      <h3>Completează <br>Istoricul Medical</h3>
+      <form (ngSubmit)="submitForm()">
+        <div class="form-group">
+          <label for="diagnosis">Diagnostic:</label>
+          <input
+            id="diagnosis"
+            type="text"
+            [(ngModel)]="medicalHistoryRequest.diagnosis"
+            name="diagnosis"
+            class="form-control"
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="treatment">Tratament:</label>
+          <input
+            id="treatment"
+            type="text"
+            [(ngModel)]="medicalHistoryRequest.treatment"
+            name="treatment"
+            class="form-control"
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="additionalInfo">Informații Adiționale:</label>
+          <textarea
+            id="additionalInfo"
+            [(ngModel)]="medicalHistoryRequest.additionalInfo"
+            name="additionalInfo"
+            class="form-control"
+          ></textarea>
+        </div>
+
+        <div class="mij">
+          <div>
+            <button type="submit" class="btn btn-success">Trimite</button>
+          </div>
+          <div>
+            <button type="button" class="btn btn-secondary" (click)="closeForm()">Anulează</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+</body>
+
+<app-footer></app-footer>
+

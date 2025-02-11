@@ -1,0 +1,76 @@
+<app-menu></app-menu>
+
+<body>
+<div class="main">
+  <div class="profile-container">
+    <h2>Profilul meu</h2>
+
+    <!-- Afișăm mesajul de succes -->
+    <div *ngIf="successMessage" class="alert alert-success">
+      {{ successMessage }}
+    </div>
+
+    <!-- Formularul de editare -->
+    <form *ngIf="isEditMode" [formGroup]="userForm" (ngSubmit)="saveProfile()">
+      <div class="form-group">
+        <label for="firstname">Prenumele:</label>
+        <input id="firstname" class="form-control" formControlName="firstname" required />
+      </div>
+
+      <div class="form-group">
+        <label for="lastname">Numele de familie:</label>
+        <input id="lastname" class="form-control" formControlName="lastname" required />
+      </div>
+
+      <div class="form-group">
+        <label for="phoneNumber">Numar de telefon:</label>
+        <input id="phoneNumber" class="form-control" formControlName="phoneNumber" required />
+        <div *ngIf="phoneNumberControl?.hasError('pattern') && phoneNumberControl?.touched" class="error">
+          ⚠️ Numărul de telefon trebuie să conțină exact 10 cifre și să înceapă cu "07".
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="address">Adresa:</label>
+        <input id="address" class="form-control" formControlName="address" required />
+      </div>
+
+      <div class="form-group">
+        <label for="cnp">CNP:</label>
+        <input id="cnp" class="form-control" formControlName="cnp"  />
+      </div>
+
+      <div class="form-group">
+        <label for="dateOfBirth">Data nasterii:</label>
+        <input id="dateOfBirth" type="date" class="form-control" formControlName="dateOfBirth" required />
+        <div *ngIf="dateOfBirthControl?.hasError('ageError') && dateOfBirthControl?.touched" class="error">
+          ⚠️ Trebuie să ai cel puțin 18 ani.
+        </div>
+      </div>
+
+      <div class="mij">
+        <div>
+          <button type="submit" class="btn btn-primary" [disabled]="!userForm.valid">Save</button>
+        </div>
+        <div>
+          <button type="button" class="btn btn-secondary" (click)="toggleEditMode()">Cancel</button>
+        </div>
+      </div>
+
+    </form>
+
+    <!-- Vizualizare profil -->
+    <div *ngIf="!isEditMode">
+      <p><strong>Prenumele:</strong> {{ user.firstname}}</p>
+      <p><strong>Numele de familie:</strong> {{ user.lastname }}</p>
+      <p><strong>Numar de telefon:</strong> {{ user.phoneNumber }}</p>
+      <p><strong>Adresa:</strong> {{ user.address }}</p>
+      <p><strong>CNP:</strong> {{ user.cnp }}</p>
+      <p><strong>Data nasterii:</strong> {{ user.dateOfBirth }}</p>
+
+      <button class="btn" (click)="toggleEditMode()">Edit</button>
+    </div>
+  </div>
+</div>
+</body>
+<app-footer></app-footer>

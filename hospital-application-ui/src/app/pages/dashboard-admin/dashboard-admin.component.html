@@ -1,0 +1,41 @@
+<app-menu></app-menu>
+
+<div class="main">
+  <div class="container">
+    <h2 class="page-title">Lista Doctorilor</h2>
+    <table class="table table-bordered custom-table">
+      <thead>
+      <tr>
+        <th>ID</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Specialization</th>
+        <th>Hospital</th>
+        <th>Activat/Neactivat</th>
+        <th>Cont blocat</th>
+        <th>Actions</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let doctor of doctors">
+        <td>{{ doctor.id }}</td>
+        <td>{{ doctor.firstname }}</td>
+        <td>{{ doctor.lastname }}</td>
+        <td>{{ doctor.email }}</td>
+        <td>{{ doctor.phoneNumber }}</td>
+        <td>{{ doctor.specialization }}</td>
+        <td>{{ doctor.hospital }}</td>
+        <td>{{ doctor.enabled ? 'Activat' : 'Neactivat' }}</td>
+        <td>{{ doctor.accountLocked ? 'Blocat' : 'Deschis' }}</td>
+        <td>
+          <button (click)="editDoctor(doctor.id)" class="btn btn-primary">Editează</button>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<app-footer></app-footer>

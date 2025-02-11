@@ -1,0 +1,145 @@
+body{
+  background-color: #012d33;
+}
+
+.main{
+  background-color: #ccf3f3;
+  padding: 50px 20px 20px 20px;
+  border-radius: 25px;
+}
+
+/* Stiluri globale pentru formular */
+.container {
+  margin-top: 40px;
+  background-color: #67cdcd;
+  border-radius: 25px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #333;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #333;
+  display: block;
+  margin-bottom: 5px;
+}
+
+input.form-control {
+  width: 100%;
+  padding: 12px 15px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #fff;
+  transition: border-color 0.3s ease;
+}
+
+input.form-control:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+
+button[type="submit"] {
+  background-color: #012d33;
+  color: white;
+  font-size: 1.1rem;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: #098491;
+}
+
+button[type="submit"]:focus {
+  outline: none;
+}
+
+/* Stiluri pentru checkboxuri */
+.form-check {
+  display: flex;
+  align-items: center;
+}
+
+.form-check input {
+  margin-right: 10px;
+}
+
+button[type="submit"] {
+  width: 100%;
+  margin-top: 20px;
+}
+
+/* Responsivitate */
+@media (max-width: 768px) {
+  .container {
+    padding: 20px;
+    margin-top: 20px;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  .form-group {
+    margin-bottom: 15px;
+  }
+
+  button[type="submit"] {
+    padding: 12px 20px;
+  }
+}
+
+
+
+
+/* Stilizare pentru checkbox-uri */
+input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  accent-color: #012d33;  /* Schimbă culoarea când este bifat */
+  margin: 10px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border-radius: 4px;
+  border: 2px solid #ccc;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+input[type="checkbox"]:checked {
+  background-color: #012d33;
+  border-color: #007bff;
+}
+
+input[type="checkbox"]:not(:checked) {
+  background-color: white;
+}
+
+

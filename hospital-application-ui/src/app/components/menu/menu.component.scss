@@ -1,0 +1,64 @@
+.navbar{
+  background-color: #012d33;
+  color: #67cdcd;
+  //border-radius: 0 0 20px 20px ;
+  padding: 25px;
+}
+
+
+.brand{
+  font-family: "Goudy Old Style";
+  font-weight: bold;
+  text-decoration: none;
+  padding-left: 8px;
+  color: #67cdcd;
+  font-size: 30px;
+  margin-left: 10px
+}
+
+.elements{
+  max-width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+.elements a:hover{
+  cursor: pointer;
+  background-color: #012328;
+  padding: 20px;
+  border-radius: 25px;
+}
+
+
+.elements a{
+  margin-left: 40px;
+  padding: 20px;
+  text-decoration: none;
+  color: #67cdcd;
+  transition: box-shadow 0.3s ease;
+}
+.fas{
+  color: #67cdcd;
+}
+
+.fas:hover{
+  color: #3c8f8f;
+}
+
+.user{
+  text-decoration: none;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 14px;
+  color: white;
+  margin-right: 10px;
+}
+.user:hover{
+  color: #67cdcd;
+}
+
+.brand{
+  cursor:pointer;
+}
+
+

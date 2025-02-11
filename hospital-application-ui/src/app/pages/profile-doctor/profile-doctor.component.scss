@@ -1,0 +1,136 @@
+body {
+  background-color: #012d33;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #012d33;
+}
+
+.main{
+  background-color: #ccf3f3;
+  padding: 50px 20px 20px 20px;
+  border-radius: 25px;
+  min-height: 60vh;
+}
+
+.mij{
+  display: flex;
+  justify-content: center;
+}
+
+.profile-container {
+  background-color: #67cdcd;
+  padding: 30px;
+  border-radius: 25px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 60%;
+  margin: 50px auto;
+}
+
+h2 {
+  text-align: center;
+  color: #012d33;
+  font-size: 32px;
+  margin-bottom: 30px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  font-size: 14px;
+  font-weight: bold;
+  color: #012d33;
+  margin-bottom: 5px;
+}
+
+input.form-control {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+  color: #555;
+  transition: border-color 0.3s ease;
+}
+
+input.form-control:focus {
+  border-color: #67cdcd;
+  outline: none;
+}
+
+input[disabled] {
+  background-color: #f8f9fa;
+  color: #888;
+  cursor: not-allowed;
+}
+
+button {
+  font-size: 16px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn{
+  background-color: #012d33;
+  color: #67cdcd;
+}
+
+
+.btn:hover{
+  background-color: #2d7781;
+}
+
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+button.btn-primary {
+  background-color: #012d33;
+  color: #67cdcd;
+  border: none;
+}
+
+button.btn-primary:hover {
+  background-color: #56b0b0;
+}
+
+button.btn-secondary {
+  background-color: #f1f1f1;
+  color: #333;
+  border: none;
+  margin-left: 10px;
+}
+
+button.btn-secondary:hover {
+  background-color: #ddd;
+}
+
+button.btn-warning {
+  background-color: #ffbb33;
+  color: white;
+  border: none;
+}
+
+button.btn-warning:hover {
+  background-color: #ff9e00;
+}
+
+.profile-container p {
+  font-size: 16px;
+  margin-bottom: 10px;
+  color: #012d33;
+}
+
+@media screen and (max-width: 768px) {
+  .profile-container {
+    width: 90%;
+  }
+
+  h2 {
+    font-size: 28px;
+  }
+}

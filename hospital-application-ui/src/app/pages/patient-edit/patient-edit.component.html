@@ -1,0 +1,46 @@
+<app-menu></app-menu>
+
+<body>
+<div class="main">
+  <div class="container">
+    <h2>Editare Pacient</h2>
+    <form (ngSubmit)="updatePatient()">
+      <div class="form-group">
+        <label for="firstname">Prenume:</label>
+        <input type="text" id="firstname" class="form-control" [(ngModel)]="updatedUser.firstname" name="firstname" required />
+      </div>
+      <div class="form-group">
+        <label for="lastname">Nume:</label>
+        <input type="text" id="lastname" class="form-control" [(ngModel)]="updatedUser.lastname" name="lastname" required />
+      </div>
+      <div class="form-group">
+        <label for="address">Adresa:</label>
+        <input type="text" id="address" class="form-control" [(ngModel)]="updatedUser.address" name="address" required />
+      </div>
+      <div class="form-group">
+        <label for="cnp">CNP:</label>
+        <input type="text" id="cnp" class="form-control" [(ngModel)]="updatedUser.cnp" name="cnp" required />
+      </div>
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" class="form-control" [(ngModel)]="updatedUser.email" name="email" required />
+      </div>
+      <div class="form-group">
+        <label for="phoneNumber">Telefon:</label>
+        <input type="text" id="phoneNumber" class="form-control" [(ngModel)]="updatedUser.phoneNumber" name="phoneNumber" required />
+      </div>
+      <div class="form-group">
+        <label for="enabled">Cont activ:</label>
+        <input type="checkbox" id="enabled" class="form-control" [(ngModel)]="updatedUser.enabled" name="enabled" />
+      </div>
+      <div class="form-group">
+        <label for="accountLocked">Contul este blocat:</label>
+        <input type="checkbox" id="accountLocked" class="form-control" [(ngModel)]="updatedUser.accountLocked" name="accountLocked" />
+      </div>
+      <button type="submit" class="btn btn-success">Actualizează</button>
+    </form>
+  </div>
+</div>
+</body>
+
+<app-footer></app-footer>

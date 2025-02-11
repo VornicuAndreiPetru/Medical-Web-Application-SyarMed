@@ -1,0 +1,45 @@
+<app-menu></app-menu>
+<body>
+<div class="main">
+  <div class="container">
+    <div class="tabs">
+      <button class="tab active" >Register as Patient</button>
+      <button class="tab" (click)="toDoctorReg()">Register as Doctor</button>
+    </div>
+
+    <div class="alert alert-danger" role="alert" *ngIf="errorMsg.length">
+      <p *ngFor="let msg of errorMsg">{{ msg }}</p>
+    </div>
+
+    <!-- Patient Registration Form -->
+    <form id="patientForm" class="form active">
+      <h2>Patient Registration</h2>
+      <div class="form-group">
+        <label for="patient-firstname">First Name</label>
+        <input [(ngModel)]="registerRequest.firstname" type="text" id="patient-firstname" name="firstname" required>
+      </div>
+      <div class="form-group">
+        <label for="patient-lastname">Last Name</label>
+        <input [(ngModel)]="registerRequest.lastname" type="text" id="patient-lastname" name="lastname" required>
+      </div>
+      <div class="form-group">
+        <label for="patient-email">Email</label>
+        <input [(ngModel)]="registerRequest.email" type="email" id="patient-email" name="email" required>
+      </div>
+      <div class="form-group">
+        <label for="patient-password">Password</label>
+        <input [(ngModel)]="registerRequest.password" type="password" id="patient-password" name="password" required>
+      </div>
+      <div class="form-group">
+        <label for="patient-cnp">CNP</label>
+        <input [(ngModel)]="registerRequest.cnp" type="text" id="patient-cnp" name="cnp" required>
+      </div>
+      <div class="submitButton">
+        <button (click)="register()" type="submit">Register as Patient</button>
+      </div>
+    </form>
+  </div>
+</div>
+</body>
+<app-footer></app-footer>
+

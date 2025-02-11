@@ -1,0 +1,84 @@
+<app-menu></app-menu>
+
+
+<body>
+<div class="main">
+  <div class="appointment-container">
+    <h2>Programează-te la doctor</h2>
+
+    <!-- Specializare -->
+    <div class="form-group">
+      <label for="specialization">Specializare:</label>
+      <select id="specialization" [(ngModel)]="selectedSpecialization" (change)="onSpecializationChange()">
+        <option *ngFor="let specialization of specializations" [value]="specialization">
+          {{ specialization }}
+        </option>
+      </select>
+    </div>
+
+    <!-- Spital -->
+    <div class="form-group" *ngIf="hospitals.length > 0">
+      <label for="hospital">Spital:</label>
+      <select id="hospital" [(ngModel)]="selectedHospital" (change)="onHospitalChange()">
+        <option *ngFor="let hospital of hospitals" [value]="hospital">
+          {{ hospital }}
+        </option>
+      </select>
+    </div>
+
+    <!-- Doctori -->
+    <div class="doctor-list" *ngIf="doctors.length > 0">
+      <div *ngFor="let doctor of doctors" class="doctor-card">
+        <h3>{{doctor.lastname}} {{ doctor.firstname }}</h3>
+        <p>Specializare: {{ doctor.specialization }}</p>
+        <p>Spital: {{ doctor.hospital }}</p>
+<!--        <p>Rating mediu: {{ doctor.averageRating | number: '1.1-1' }}</p>-->
+        <!--   <p>Rating mediu: {{ doctor.averageRating !== null ? doctor.averageRating | number : 'N/A' }}</p> &lt;!&ndash; Afișează rating-ul mediu &ndash;&gt;&ndash;&gt;-->
+        <app-rating [rating]="doctor.averageRating || 0" [readOnly]="true"></app-rating>
+        <button *ngIf="doctor.id" [class.active]="doctor.id === selectedDoctor"  (click)="onDoctorChange(doctor.id)">Selectează</button>
+      </div>
+    </div>
+
+    <!-- Data -->
+    <div class="form-group" *ngIf="selectedDoctor">
+      <label for="date">Data:</label>
+      <input type="date" id="date" [(ngModel)]="appointmentDate" (change)="checkAvailability()" />
+      <p>Data selectată: {{ appointmentDate }}</p>
+    </div>
+
+    <!-- Ora -->
+    <div class="form-group" *ngIf="availableTimeSlots.length > 0">
+      <label for="time">Ora:</label>
+      <select id="time" [(ngModel)]="appointmentTime">
+        <option *ngFor="let time of availableTimeSlots" [value]="time">
+          {{ time }}
+        </option>
+      </select>
+      <p>Ora selectată: {{ appointmentTime }}</p>
+    </div>
+
+    <!-- Motivul -->
+    <div class="form-group" *ngIf="selectedDoctor">
+      <label for="reason">Motivul programării:</label>
+      <textarea id="reason" [(ngModel)]="reason" placeholder="Introdu motivul programării"></textarea>
+      <p>Motivul: {{ reason }}</p>
+    </div>
+
+    <!-- Confirmare Programare -->
+    <div *ngIf="isAvailable && appointmentDate && appointmentTime && reason">
+      <button (click)="confirmAppointment()">Programează-mă</button>
+    </div>
+
+    <!-- Mesaj de disponibilitate -->
+    <div *ngIf="availabilityChecked">
+      <p [class.success]="isAvailable" [class.error]="!isAvailable">
+        {{ isAvailable ? 'Doctorul este disponibil la ora selectată!' : 'Ne pare rău, doctorul nu este disponibil la ora selectată.' }}
+      </p>
+    </div>
+  </div>
+</div>
+</body>
+
+
+
+<app-footer></app-footer>

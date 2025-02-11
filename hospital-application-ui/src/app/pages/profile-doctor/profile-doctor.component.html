@@ -1,0 +1,64 @@
+<app-menu></app-menu>
+
+
+<body>
+<div class="main">
+  <div class="profile-container">
+    <h2>Profilul meu</h2>
+
+    <!-- Formularul pentru editare -->
+    <form *ngIf="isEditMode" (ngSubmit)="saveProfile()">
+      <div class="form-group">
+        <label for="firstname">Nume:</label>
+        <input id="firstname" class="form-control" [(ngModel)]="user.firstname" name="name" required />
+      </div>
+
+      <div class="form-group">
+        <label for="lastname">Nume:</label>
+        <input id="lastname" class="form-control" [(ngModel)]="user.lastname" name="name" required />
+      </div>
+
+      <div class="form-group">
+        <label for="specialization">Specializare:</label>
+        <input id="specialization" class="form-control" [(ngModel)]="user.specialization" name="specialization" required />
+      </div>
+
+      <div class="form-group">
+        <label for="hospital">Spital:</label>
+        <input id="hospital" class="form-control" [(ngModel)]="user.hospital" name="hospital" required />
+      </div>
+
+      <div class="form-group">
+        <label for="averageRating">Nota doctorului:</label>
+        <input id="averageRating" class="form-control" [(ngModel)]="user.averageRating" name="averageRating"  [readonly]="true" disabled />
+      </div>
+
+
+      <div class="mij">
+        <div>
+          <button type="submit" class="btn btn-primary">Save</button>
+        </div>
+        <div>
+          <button type="button" class="btn btn-secondary" (click)="toggleEditMode()">Cancel</button>
+        </div>
+      </div>
+
+    </form>
+
+    <!-- Vizualizarea profilului doctorului -->
+    <div *ngIf="!isEditMode">
+      <p><strong>Prenume:</strong> {{ user.firstname }}</p>
+      <p><strong>Nume de familie:</strong> {{ user.lastname }}</p>
+      <p><strong>Specializare:</strong> {{ user.specialization }}</p>
+      <p><strong>Spital:</strong> {{ user.hospital }}</p>
+      <p><strong>Nota doctorului:</strong> {{user.averageRating}}</p>
+      <app-rating [rating]="user.averageRating || 0" [readOnly]="true"></app-rating>
+
+      <br>
+      <button class="btn" (click)="toggleEditMode()">Edit</button>
+    </div>
+  </div>
+</div>
+</body>
+
+<app-footer></app-footer>

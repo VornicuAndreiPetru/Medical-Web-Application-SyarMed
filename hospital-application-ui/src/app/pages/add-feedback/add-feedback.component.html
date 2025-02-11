@@ -1,0 +1,53 @@
+<app-menu></app-menu>
+
+<body>
+<div class="main">
+
+  <div *ngIf="completedAppointments.length === 0" class="no-appointments">
+    <p>Nu ai nicio programare finalizată momentan.</p>
+  </div>
+
+  <div class="appointments-list">
+    <div *ngFor="let appointment of completedAppointments" class="appointment-card">
+      <div class="appointment-details">
+        <h3>Programare cu:</h3>
+        <h3>Dr. {{ appointment.doctorName }}</h3>
+        <p>Motiv: {{ appointment.reason }}</p>
+        <p class="status">{{ appointment.status }}</p>
+        <h5>Data: {{ appointment.dateAppointment | date }}</h5>
+        <br>
+        <p *ngIf="appointment.feedback?.length ===1"><i class="fa-solid fa-check"></i> Ai adaugat deja Feedback</p>
+      </div>
+      <button *ngIf="!appointment.feedback || appointment.feedback.length === 0"
+              (click)="selectedAppointment = appointment"
+              class="feedback-button">
+        Adaugă Feedback
+      </button>
+
+    </div>
+
+    <!-- Modalul pentru feedback -->
+    <div *ngIf="selectedAppointment" class="modal-overlay">
+      <div class="modal-content">
+        <h4>Adaugă Feedback pentru </h4>
+        <h4>Dr. {{ selectedAppointment.doctorName }}</h4>
+        <br>
+        <div class="rating">
+          <app-rating [(rating)]="rating"></app-rating>
+        </div>
+
+
+        <label for="comment">Comentariu:</label>
+        <textarea id="comment" [(ngModel)]="comment"></textarea>
+        <br>
+        <button (click)="submitFeedback()">Trimite Feedback</button>
+
+        <button (click)="selectedAppointment = null" class="btn-close"></button>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+
+<app-footer></app-footer>
+

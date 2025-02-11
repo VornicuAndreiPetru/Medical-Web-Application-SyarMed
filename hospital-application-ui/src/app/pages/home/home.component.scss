@@ -1,0 +1,206 @@
+.main {
+  font-family: "Poppins", sans-serif;
+  background-color: #ccf3f3;
+  color: #012d33;
+  margin: 0;
+  padding: 50px 20px 20px 20px;
+  border-radius: 25px;
+}
+
+body{
+  background-color: #012d33;
+}
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+}
+.text {
+  max-width: 50%;
+}
+.text h1 {
+  color: #012d33;
+  font-weight: bold;
+}
+.text p{
+  font-size: 20px;
+}
+.image img {
+  max-width: 200%;
+  border-radius: 10px;
+}
+
+h4{
+  font-weight: bold;
+}
+
+.faq {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.faq h2 {
+  color: #1565c0;
+}
+.examples {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin: 40px auto;
+  max-width: 1200px;
+}
+.examples img {
+  max-width: 30%;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.buton{
+  background: linear-gradient(45deg, #012d33, #67cdcd);
+  color: white;
+  padding: 15px 30px;
+  font-size: 18px;
+  font-weight: bold;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+.buton:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+
+/* Categorii */
+
+.stanga {
+  padding: 110px 20px; /* Reducem padding-ul */
+  max-width: 600px; /* Limităm lățimea pentru a nu se întinde prea mult */
+  margin: 0 auto; /* Centrăm conținutul */
+  color: #012d33;
+}
+
+
+
+.categories {
+  display: flex;
+  background-color: #abdcdc;
+  color: black;
+  padding: 40px 20px;
+  border-radius: 25px;
+  margin-top: 50px;
+}
+.categories h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.categories p {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto 30px;
+}
+
+.stanga p{
+  text-align: center;
+}
+.categories .cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 20px;
+  max-width: 100%;
+  margin: 0 auto;
+}
+.categories .card {
+  background: linear-gradient(45deg, #012d33, #67cdcd);
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  color: white;
+  border: none;
+  transition: all 0.3s ease;
+}
+.categories .card h4 {
+  margin: 10px 0;
+  text-align: center;
+}
+.categories .card p {
+  font-size: 0.9em;
+}
+.card:hover{
+  transform: scale(1.1);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* FAQ */
+
+.faq-container {
+  max-width: 1200px;
+  margin: 80px auto;
+  color: white;
+  padding: 20px;
+}
+
+.faq-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  align-items: flex-start; /* Previne alinierea verticală */
+}
+
+.faq-item {
+  background: linear-gradient(45deg, #012d33, #67cdcd);
+  border-radius: 25px;
+  padding: 15px;
+  transition: background-color 0.3s ease-in-out;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  flex: 1 0 calc(50% - 15px); /* Ajustează pentru gap */
+}
+
+.faq-item:hover {
+  background-color: #718096;
+}
+
+.faq-question {
+  font-size: 1.2em;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  cursor: pointer;
+}
+
+.faq-answer {
+  font-size: 1em;
+  line-height: 1.5;
+  padding: 0 15px;
+  border-radius: 5px;
+  margin-top: 10px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-in-out, padding 0.3s ease-in-out;
+  opacity: 0;
+}
+
+.faq-answer.open {
+  max-height: 500px; /* Adjust this value based on your content */
+  padding: 15px;
+  opacity: 1;
+}
+
+
+
+
+
+
+
+
+

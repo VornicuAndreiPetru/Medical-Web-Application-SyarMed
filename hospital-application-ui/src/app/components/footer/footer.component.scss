@@ -1,0 +1,98 @@
+/* Footer Styles */
+.medical-footer {
+  background-color: #012d33; /* Albastru închis, potrivit tematicii medicale */
+  color: #ffffff;
+  padding: 40px 20px;
+}
+
+.medical-footer .container {
+  max-width: 1200px;
+  margin-top: 0 ;
+  margin-bottom: 25px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.footer-sections {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.footer-about h3 {
+  font-size: 1.5rem;
+  color: #67cdcd; /* Accent turcoaz */
+  margin-bottom: 10px;
+}
+
+.footer-about p {
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.footer-links h4,
+.footer-contact h4 {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links ul li {
+  margin-bottom: 8px;
+}
+
+.footer-links ul li a {
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 0.9rem;
+  transition: color 0.3s ease;
+}
+
+.footer-links ul li a:hover {
+  cursor: pointer;
+  color: #00bfff; /* Accent pe hover */
+}
+
+.footer-contact p {
+  font-size: 0.9rem;
+  margin: 5px 0;
+}
+
+.footer-bottom {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.footer-bottom .social-icons {
+  margin-bottom: 10px;
+}
+
+.footer-bottom .social-icons a {
+  margin: 0 10px;
+  display: inline-block;
+}
+
+.footer-bottom .social-icons img {
+  width: 24px;
+  height: 24px;
+  filter: brightness(0) invert(1);
+  transition: transform 0.3s ease;
+}
+
+.footer-bottom .social-icons img:hover {
+  transform: scale(1.1);
+}
+
+.footer-bottom p {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+

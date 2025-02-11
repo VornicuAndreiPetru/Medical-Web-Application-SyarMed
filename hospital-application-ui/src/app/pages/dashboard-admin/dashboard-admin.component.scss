@@ -1,0 +1,100 @@
+/* doctor-edit.component.css */
+
+body{
+  background-color: #012d33;
+}
+
+.main{
+  background-color: #ccf3f3;
+  padding: 50px 20px 20px 20px;
+  border-radius: 25px;
+  min-height: 60vh;
+}
+
+/* Custom Styles for Doctor List */
+.page-title {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.table {
+  border-radius: 25px;
+  width: 100%;
+  margin-top: 20px;
+  border-collapse: collapse;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.table th, .table td {
+  padding: 12px 15px;
+  text-align: left;
+  border: 1px solid #ddd;
+}
+
+.table th {
+  background-color: #012d33;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.table tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.table tbody tr:hover {
+  background-color: #f1f1f1;
+  transition: background-color 0.3s ease;
+}
+
+.custom-table .btn {
+  font-size: 14px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.custom-table .btn:hover {
+  background-color: #0056b3;
+  border-color: #0056b3;
+}
+
+.custom-table .btn:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.table td {
+  font-size: 14px;
+  color: #555;
+}
+
+.table td button {
+  padding: 5px 10px;
+  background-color: #012d33;
+  color: white;
+  border: none;
+  border-radius: 4px;
+}
+
+.table td button:hover {
+  background-color: #218838;
+  cursor: pointer;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+  .table th, .table td {
+    font-size: 12px;
+    padding: 8px 10px;
+  }
+
+  .page-title {
+    font-size: 1.5rem;
+  }
+}
+
+

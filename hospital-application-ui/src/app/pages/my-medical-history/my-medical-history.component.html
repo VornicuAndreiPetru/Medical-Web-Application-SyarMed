@@ -1,0 +1,30 @@
+<app-menu></app-menu>
+
+
+<body>
+
+
+<div class="main">
+  <h2>Istoricul Meu Medical</h2>
+  <div class="medical-history-container">
+
+
+    <div *ngIf="errorMessage" class="error-message">
+      {{ errorMessage }}
+    </div>
+
+    <div *ngIf="!medicalHistory?.length && !errorMessage" class="no-history">
+      Nu există înregistrări medicale disponibile.
+    </div>
+
+    <div *ngFor="let history of medicalHistory" class="history-card">
+      <p><strong>Data si ora consultației:</strong> {{ history.appointmentDate | date: 'MMM d, y HH:mm' }}</p>
+      <p><strong>Diagnostic:</strong> {{ history.diagnosis }}</p>
+      <p><strong>Tratament:</strong> {{ history.treatment }}</p>
+      <p><strong>Informații Adiționale:</strong> {{ history.additionalInfo }}</p>
+      <p><strong>Doctor:</strong> {{ history.doctorName }}</p>
+    </div>
+  </div>
+</div>
+</body>
+<app-footer></app-footer>
