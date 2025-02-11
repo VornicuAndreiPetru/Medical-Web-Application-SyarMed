@@ -20,15 +20,29 @@ SyarMed is a web-based medical application designed to help manage hospital data
 
 ## 💻 **Technologies Used:** 
 - **Frontend**:
-  - **Angular** for dynamic UI
-  - **OpenAPI** for API documentation and integration
-  - HTML, SCSS for styling
+  - **Angular**: A TypeScript-based framework for building dynamic, responsive single-page applications with efficient data binding and component-driven architecture.
+  - **OpenAPI**: For API documentation and automated client code generation, making integration between frontend and backend seamless.
+  - **HTML5 & SCSS**: HTML5 for structuring content and SCSS for styling, providing a flexible, maintainable, and responsive design.
+  - **Bootstrap**: For responsive design and fast prototyping, helping with the layout and component styling.
+  - **RxJS**: Used with Angular for reactive programming, allowing better management of asynchronous data streams and events.
+
 - **Backend**:
-  - **Java** with Spring Boot for backend logic
-  - **MySQL** for database management
-  - **JWT** (JSON Web Tokens) for user authentication
-- **Containerization**: **Docker** for email functionality (mailing service)
-- **Version Control**: Git for source code management
+  - **Java** with **Spring Boot**: A powerful backend framework that simplifies the development of production-ready applications with built-in features like security, database integration, and microservices support.
+  - **PostgreSQL**: A robust and scalable relational database system, widely used for storing and managing structured data, providing advanced features like support for JSON and complex queries.
+  - **JWT (JSON Web Tokens)**: For secure user authentication and authorization, ensuring that only authorized users can access specific application features.
+  - **Spring Security**: For implementing authentication and authorization processes in the backend.
+  - **JPA (Java Persistence API)**: For ORM (Object-Relational Mapping) to easily interact with the database using Java objects.
+
+- **Containerization**:
+  - **Docker**: For packaging the application into containers, ensuring it runs consistently across different environments. Used for the deployment of email functionality (mailing service) and overall container management.
+
+- **Version Control & Collaboration**:
+  - **Git**: A distributed version control system to manage source code and track changes across various development stages.
+  - **GitHub**: Hosting and collaboration platform for version control using Git, allowing for code sharing, issue tracking, and collaborative development.
+ 
+- **Others**:
+  - **Postman**: For testing APIs, making it easier to send requests and validate responses.
+  - **Swagger UI**: For providing an interactive API documentation, making it easier for developers to explore and test the API endpoints.
 
 ## ⚙️ **Setup:** 
 1. Clone the repository.
