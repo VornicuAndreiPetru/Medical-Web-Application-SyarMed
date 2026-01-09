@@ -4,7 +4,7 @@ services:
     image: postgres
     environment:
       POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: cimapnzeu727
+      POSTGRES_PASSWORD: 
       PGDATA: /var/lib/postgresql/data
       POSTGRES_DB: hospital_application
     volumes:
